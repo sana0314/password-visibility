@@ -1,0 +1,107 @@
+body {
+    background: pink;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.password {
+    background: #011627;
+    border-radius: 10px;
+    width: 350px;
+    height: 75px;
+    position: relative;
+    box-shadow: 0 0 12px 0 rgba(1, 1, 1, 0.25);
+    overflow: hidden;
+} 
+
+.password-background {
+    background: #fefefe;
+    position: absolute;
+    width: 150%;
+    height: 100%;
+    border-radius: 5px;
+    top: 0;
+    right: -50%;
+    transition: 0.2s all ease-in-out;
+}
+
+
+.password-toggle {
+    height: 50px;
+    width: 50px;
+    top: 10px;
+    right: 10px;
+    position: absolute;
+    z-index: 1;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+
+.toggle-eye {
+    position: absolute;
+    top: 27px;
+    right: 27px;
+    font-size: 22px;
+}
+
+
+.toggle-eye.close {
+    transition: 0.4s all ease-in-out;
+}
+
+
+.toggle-eye.open {
+    transition: 0.2s all ease-out;
+}
+
+.password-lock {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 25px;
+}
+
+.password-input {
+    width: 200px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 60px;
+    background: none;
+    border: none;
+    font: 18px;
+    color: pink;
+    outline: none;
+    letter-spacing: 2px;
+    transition: all 0.5s;
+    -webkit-text-security: none;
+}
+
+.password-toggle:checked~ .password-background {
+    height: 50px;
+    width: 50px;
+    top: 12.5px;
+    right: 12.5px;
+    border-radius: 50%;
+}
+
+
+.password-toggle:checked~ .password-input {
+    -webkit-text-security: circle;
+}
+
+.password-toggle:checked~ .password-lock {
+    color: #ffff;
+}
+
+
+.password-toggle:checked~.toggle-eye.close {
+    opacity: 0;
+}
